@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Photoshop Kerning to PX</title>
+    <meta name="description" content="Photoshop Kerning to PX calculator.">
+    <meta name="keywords" content="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+  <main>
+    <section id="example-section">
+          <div class="inner">
+              <div class="pad">
+                  <h1>Photoshop Kerning to PX</h1>
+                  <label fpr="fontsize">Font size:</label>
+                  <input name="fontsize">
+                  <br><br>
+                  <label for="photoshopval">Photoshop Value:</label>
+                  <input name="photoshopval">
+                  <br><br>
+                  <button id="action-get-answer">Generate Value</button>
+                  <div id="answer">
+                    --
+                  </div>
+              </div>
+          </div>
+      </section>
+  </main>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+body { font-family: sans-serif; margin:20px; }
+#toolframe { width: 500px; margin: 0 auto; border: 1px solid #ccc; padding: 20px; text-align:center; border-radius: 4px; }
+
+label { display:block; padding: 0 0 10px 0; font-size: 14px; }
+input { width: 200px; height: 30px; font-size: 24px; }
+button { width: 200px; height: 50px; border: 1px solid #ccc; border-radius: 4px; cursor:pointer; font-size: 16px; font-weight: 700; }
+#answer { font-size: 36px; padding:30px 0 0 0; }
+</style
+<script>
+$(document)
+.ready(function(){
+  //
+})
+.on("click", "#action-get-answer", function(e){
+  e.preventDefault();
+  var a = parseInt($("input[name=fontsize]").val());
+  var b = parseInt($("input[name=photoshopval]").val());
+  if(a != '' && b != ''){
+    if(a > 0 && b > 0){
+      var answer = ((b / 1000) * a) + "px";
+    } else {
+      var answer = 'Please enter two numbers';
+    }
+  }
+  
+  $("#answer").text(answer);
+})
+;  
+</script>
+</body>
+</html>
